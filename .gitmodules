@@ -1,0 +1,6 @@
+[submodule "apps/web"]
+    path = apps/web
+    url = https://github.com/cristianbarreiro/Rumbo-v1.0.git
+[submodule "apps/android"]
+    path = apps/android
+    url = https://github.com/cristianbarreiro/Rumbos.git
