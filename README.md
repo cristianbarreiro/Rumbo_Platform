@@ -45,6 +45,11 @@ No se actualiza automáticamente a la última rama remota. Los commits del repos
 4. Actualizar las especificaciones afectadas y revisar la paridad con la otra aplicación.
 5. Confirmar y publicar el cambio del padre después de que los commits de las aplicaciones estén disponibles en GitHub.
 
-## Estado inicial (2026-09-16)
+## Estado de integración (2026-09-16)
 
-Estructura preparada localmente, sin commit ni publicación. Web se recuperó de la copia local existente. Android está registrado en el commit `7511c4c61a923bbf03f03c77110d2b5446714203`, consultado en GitHub; su descarga local está pendiente porque Git no dispone de credenciales en esta sesión. Ejecutar setup con autenticación disponible. Las compilaciones de las aplicaciones no se han verificado en esta preparación.
+Ambas aplicaciones están registradas como submódulos Git:
+
+- Web: `6550da48858adea67a39d28f6ac6253998fcc8eb`.
+- Android: `7511c4c61a923bbf03f03c77110d2b5446714203`.
+
+El repositorio principal guarda enlaces a estos commits; el código y el historial permanecen en sus repositorios independientes. Para sincronizar una copia existente, ejecutar `git pull --ff-only` y luego `./scripts/setup.ps1` con acceso a ambos repositorios. Las compilaciones no se han verificado durante esta integración.
