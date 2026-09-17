@@ -1,7 +1,7 @@
 # Android
 
-Fuente: commit 7511c4c61a923bbf03f03c77110d2b5446714203 de cristianbarreiro/Rumbos, consultado mediante GitHub.
+[Auditoría y versión inspeccionada](audit.md). Kotlin/Jetpack Compose, Gradle Kotlin DSL, módulo app, minSdk 24 y targetSdk 36. Capas data, domain y ui con RumboViewModel y Flows; pruebas de transporte en app/src/test. Tema en ui/theme y mapa Canvas en ui/map/RumboMap.kt.
 
-Kotlin y Jetpack Compose; módulo app; dependencias declaradas de Retrofit, OkHttp y Room. La configuración declara minSdk 24 y targetSdk 36. Existen capas data, domain y ui, y pruebas de lógica de transporte.
+TransitRepositoryImpl utiliza MontevideoTransitData local. Retrofit, Moshi, OkHttp y Room declarados no prueban integración remota o persistencia activa. No hay paridad de procedencia con Web acreditada.
 
-Pendiente: descargar el submódulo, revisar sus instrucciones y requisitos de compilación y ejecutar las pruebas. Abrir apps/android como proyecto independiente en Android Studio una vez inicializado. No se certifica compilación ni conexión real con IMM.
+Abrir apps/android como proyecto independiente. No tiene README rastreado; consultar app/build.gradle.kts, settings.gradle.kts, catálogo Gradle y .env.example. Faltan scripts y JAR del wrapper en el snapshot rastreado; resolver reproducibilidad en el cliente antes de dar comandos de wrapper por disponibles. No se ejecutó compilación ni pruebas Android en esta tarea documental.

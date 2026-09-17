@@ -1,7 +1,9 @@
 # Próximos pasos
 
-1. Completar la descarga autenticada de Android y validar ambas compilaciones.
-2. Auditar pantallas, navegación y modelos de ambos commits fijados.
-3. Aprobar contratos y tokens a partir de esa comparación.
-4. Aplicar cambios incrementales de paridad con verificaciones por plataforma.
-5. Validar la integración IMM y distinguir datos reales de demostración.
+1. Resolver reproducibilidad del build Android y validar builds/pruebas de ambos clientes en sus repositorios.
+2. Ejecutar escenarios comparables de mapas, búsqueda, llegadas, navegación y accesibilidad; la auditoría inicial es estática.
+3. Resolver diferencias de identificadores, variantes, ETA ausente y procedencia registradas en contracts/models/transit.md.
+4. Verificar integración IMM con evidencia oficial y pruebas; los datos Android actuales son locales.
+5. Aprobar criterios visuales a partir de capturas equivalentes antes de extraer tokens.
+
+Skills futuras posibles: rumbo-design-parity, rumbo-imm-integration y rumbo-repo-audit. No están implementadas; añadirlas solo ante necesidad concreta.

@@ -1,9 +1,8 @@
 # Contratos compartidos
 
-Espacio reservado para acuerdos independientes del lenguaje, aún sin contratos aprobados.
+Rumbo Platform mantiene el significado común; cada cliente mantiene sus modelos y adaptadores nativos.
 
-- models/: definiciones y semántica del dominio.
-- schemas/: esquemas de validación versionados.
-- examples/: casos representativos sin secretos ni datos personales.
+- [Transporte](models/transit.md): parada, ubicación, línea/recorrido, vehículo y llegada, extraídos de ambas implementaciones con diferencias explícitas.
+- `schemas/` y `examples/`: áreas preexistentes pendientes; no hay esquema de intercambio aprobado ni validación compartida configurada.
 
-Extraer los contratos después de comparar ambos proyectos. Documentar identificadores, nulabilidad, unidades, coordenadas, zona horaria, errores y procedencia de datos. Cada aplicación mantiene sus adaptadores y pruebas de conformidad. No asumir que tipos TypeScript y Kotlin coinciden por su nombre.
+No importar estos documentos desde las aplicaciones ni confundirlos con payloads del proveedor. Antes de cambiar significado, evaluar identificadores, nulabilidad, unidades, tiempo, procedencia, cachés/persistencia, pruebas y documentación mediante `rumbo-contract-sync`.

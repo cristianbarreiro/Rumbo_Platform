@@ -7,3 +7,18 @@ local.properties
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Local credentials, IDE metadata and build output
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+.idea/
+.vscode/
+*.iml
+.gradle/
+.kotlin/
+build/
+dist/
+coverage/
+*.log

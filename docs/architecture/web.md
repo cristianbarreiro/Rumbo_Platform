@@ -1,7 +1,5 @@
 # Web
 
-Fuente: package.json de la copia local de Rumbo-v1.0. React 19, TypeScript, Vite 6, Express 4 y Leaflet 1.9. Entradas: index.html, src/ y server.ts.
+[Auditoría y versión inspeccionada](audit.md). React 19, TypeScript, Vite 6, Express 4 y Leaflet 1.9. Entradas: index.html, src/App.tsx y server.ts. Componentes de mapa, búsqueda y paneles en src/components; modelos en src/types.ts; acceso HTTP en src/services/api.ts; normalización en server.ts y horarios en gtfsScheduleService.ts.
 
-Desde apps/web, instalar dependencias siguiendo el gestor y lockfile del proyecto (existe bun.lock). Scripts disponibles: dev, build, start, preview, lint y test. `lint` ejecuta TypeScript sin emitir archivos; `test` ejecuta test/*.test.ts con tsx.
-
-Pendiente: verificar instalación y compilación, describir módulos y contrastar modelos y pantallas con Android. No se modificó el código de la aplicación.
+Proyecto independiente en apps/web. No tiene README rastreado en el snapshot auditado: consultar package.json, .env.example y configuración del propio repositorio. Existen package-lock.json y bun.lock; usar el gestor acordado allí. Scripts: dev, build, start, preview, lint y test. `lint` ejecuta TypeScript sin emitir; `test` ejecuta test/*.test.ts con tsx. No se ejecutaron builds o pruebas de aplicación en esta tarea documental.
