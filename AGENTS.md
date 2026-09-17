@@ -1,38 +1,43 @@
-# Instrucciones para trabajar en Rumbo Platform
+# Rumbo — reglas operativas
 
 ## Alcance
 
-Este repositorio coordina `apps/web` (Rumbo-v1.0) y `apps/android` (Rumbos). Son submódulos independientes. Leer las instrucciones propias de cada aplicación antes de modificarla.
+Rumbo Platform coordina `apps/web` y `apps/android`, implementaciones independientes del mismo producto.
+Paridad significa comportamiento y significado equivalentes, con arquitectura y UI nativas.
+No compartir implementación entre clientes ni acoplar sus builds.
 
-## Método
+## Antes de editar
 
-- Leer primero README.md y la documentación pertinente a la tarea; evitar cargar ambos repositorios completos para cambios pequeños.
-- Conservar los cambios del usuario y revisar el estado Git del padre y del submódulo afectado.
-- Compartir comportamiento, vocabulario, contratos y criterios de diseño. Respetar las convenciones nativas de TypeScript y Kotlin.
-- No importar código de una aplicación mediante rutas relativas a la otra.
-- Distinguir en la documentación lo observado, lo propuesto y lo pendiente de verificar.
-- Actualizar solamente la documentación afectada por cada cambio. Cambiar este archivo cuando cambien las reglas de trabajo o la estructura.
-- Para cambios transversales, indicar impacto en ambas plataformas y registrar pendientes de paridad.
-- Ejecutar las verificaciones relevantes del proyecto afectado. No afirmar validación si no se ejecutó.
-- Mantener secretos, archivos .env, credenciales, keystores y configuración local fuera del repositorio.
-- No mover punteros a versiones remotas automáticamente. Revisar los commits seleccionados.
-- No presentar datos simulados como transporte en tiempo real verificado.
+- Revisar el estado Git del padre y del cliente afectado; conservar trabajo existente.
+- Leer las instrucciones locales del área y el código pertinente antes de cambiarlo.
+- Si cambia comportamiento o significado compartido, determinar el impacto en el otro cliente.
+- Modificar solo las capas afectadas; evitar refactors, renombres, rediseños y dependencias ajenos al pedido.
+- No restablecer checkouts ni avanzar pins de submódulos automáticamente; revisar los commits seleccionados.
 
-## Mapa
+## Fuentes y lectura bajo demanda
 
-`docs/architecture`: arquitectura; `docs/product`: alcance y paridad; `docs/design`: criterios visuales; `docs/api`: integración externa; `contracts`: modelos y ejemplos compartidos; `design`: tokens y recursos aprobados; `scripts`: preparación del repositorio.
+- Reglas operativas: este archivo; procedimientos especializados: las skills enlazadas abajo.
+- Conocimiento duradero: [.okf/index.md](.okf/index.md), solo para dudas de arquitectura, semántica, integración o decisiones.
+- Implementación real: código y configuración del cliente; README es la entrada humana, no lectura obligatoria de cada tarea.
+- Para cambios ordinarios, empezar en la entrada de la función y seguir solo las dependencias necesarias.
+- No cargar todo OKF, todas las skills ni escanear ambos clientes por defecto.
+- Si código y conocimiento discrepan, investigar intención e historial antes de corregir la fuente desactualizada.
+  No cambiar código de producción únicamente para satisfacer documentación obsoleta.
 
-## Reglas de alcance y contratos
+## Integridad y verificación
 
-Rumbo Platform es la fuente de verdad del producto: comportamiento -> contrato conceptual compartido -> implementaciones Web y Android independientes. Paridad significa comportamiento visible equivalente, no código o arquitectura idénticos.
+- No inventar comportamiento, endpoints, campos, identificadores o relaciones del proveedor de transporte.
+  Verificar la integración relevante; distinguir datos locales, horarios y mediciones reales.
+- Mantener secretos, credenciales, keystores y configuración local fuera del repositorio.
+- Ejecutar comprobaciones pertinentes y reportar cuáles se ejecutaron, sus resultados y sus límites.
+- Distinguir hechos observados, decisiones adoptadas y propuestas pendientes en la documentación.
+- Actualizar solo conocimiento afectado por cambios duraderos de arquitectura, semántica, integración o decisiones.
+  Ediciones ordinarias no requieren reescribir OKF; no guardar hipótesis, trazas o notas de sesión allí.
 
-Antes de cambiar una función: inspeccionar su implementación, comprobar si existe el concepto en el otro cliente, consultar contratos/documentación relevantes y cambiar solo lo solicitado. No refactorizar, renombrar, rediseñar ni añadir dependencias ajenas al objetivo. No modificar ambos clientes si solo uno lo requiere.
+## Skills
 
-No inventar endpoints, campos, identificadores, relaciones ni comportamiento del proveedor de transporte: verificar la integración existente. No introducir npm workspaces, builds Gradle compuestos ni capas compartidas de UI.
+- [rumbo-feature-parity](.github/skills/rumbo-feature-parity/SKILL.md): comparación o traslado de comportamiento, flujos y estados entre clientes.
+- [rumbo-contract-sync](.github/skills/rumbo-contract-sync/SKILL.md): cambios de significado de datos, modelos o normalización compartida.
 
-## Skills bajo demanda
-
-- [.github/skills/rumbo-feature-parity/SKILL.md](.github/skills/rumbo-feature-parity/SKILL.md): equivalencia funcional, flujos y estados entre clientes.
-- [.github/skills/rumbo-contract-sync/SKILL.md](.github/skills/rumbo-contract-sync/SKILL.md): significado de datos, modelos y normalización.
-
-Leer únicamente la skill correspondiente; ambas solo si el trabajo combina comportamiento y datos. Estas rutas son la fuente canónica y pueden abrirse explícitamente si el agente no descubre .github/skills automáticamente. No cargar ambos repositorios completos por defecto.
+Leer solo la skill cuyo propósito coincida; combinar ambas únicamente si cambian comportamiento y datos.
+Las rutas son canónicas: abrirlas explícitamente si el agente no descubre `.github/skills`.

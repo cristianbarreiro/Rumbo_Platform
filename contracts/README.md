@@ -1,8 +1,7 @@
 # Contratos compartidos
 
-Rumbo Platform mantiene el significado común; cada cliente mantiene sus modelos y adaptadores nativos.
+- [Contrato conceptual de transporte](../.okf/transport-model.md): definición canónica y diferencias de representación.
+- `models/`: enlaces estables a las definiciones conceptuales.
+- `schemas/` y `examples/`: áreas preexistentes sin esquema de intercambio aprobado ni validación compartida configurada.
 
-- [Transporte](models/transit.md): parada, ubicación, línea/recorrido, vehículo y llegada, extraídos de ambas implementaciones con diferencias explícitas.
-- `schemas/` y `examples/`: áreas preexistentes pendientes; no hay esquema de intercambio aprobado ni validación compartida configurada.
-
-No importar estos documentos desde las aplicaciones ni confundirlos con payloads del proveedor. Antes de cambiar significado, evaluar identificadores, nulabilidad, unidades, tiempo, procedencia, cachés/persistencia, pruebas y documentación mediante `rumbo-contract-sync`.
+Los futuros esquemas y ejemplos técnicos pertenecen aquí; el significado duradero se mantiene en OKF. El procedimiento de evolución es [rumbo-contract-sync](../.github/skills/rumbo-contract-sync/SKILL.md).

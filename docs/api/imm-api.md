@@ -1,5 +1,5 @@
 # Integración IMM
 
-Pendiente verificar endpoints, autenticación, licencias, límites, unidades, errores y actualización con documentación oficial y con el código de ambas aplicaciones.
+La referencia canónica es [procedencia de datos de transporte](../../.okf/transport-data.md): límites de la integración observada y diferencia entre datos locales, horarios y conexión verificada.
 
-No hay un contrato IMM validado en este superproyecto. Los datos locales o calculados no prueban conexión en tiempo real. No incorporar claves ni tokens en documentos o ejemplos. Documentar el origen y la fecha de verificación antes de aprobar un contrato.
+Esta ruta conserva la entrada desde docs/api sin duplicar el conocimiento ni presentar una especificación del proveedor no verificada.
